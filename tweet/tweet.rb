@@ -1,7 +1,11 @@
 class Tweet
-    attr_reader :message, :user
+    attr_reader :tweet, :user
 
     @@all = []
+
+    def self.all
+        @@all
+    end
 
     def initialize(username)
         @username = username
@@ -19,8 +23,13 @@ class Tweet
     end
 
     def like_tweet(tweet)
-        @like_tweets << tweet
+        Like.new(self, tweet)
     end
 
+    # def liked_tweets
+    #     Like.all.select do |like|
+    #         like.user == self
+    #     end
+    # end
 
 end
