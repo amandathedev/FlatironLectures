@@ -1,0 +1,12 @@
+<% link_to "Back", doctor_path(@doctor)%>
+<form action="/doctors/<%=doctor.id%>" method="POST">
+    <input type="hidden" name="_method" value="PATCH">
+    Name:
+    <input type="text" name="doctor[name]" value="<%= doctor.name%>">
+    Specialty:
+    <input type="text" name="doctor[specialty]">
+    <input type="submit">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+</form>
+
+<!-- When we hit submit, it will send it to the create action in the controller -->

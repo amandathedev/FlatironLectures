@@ -1,0 +1,10 @@
+<form action="/doctors" method="POST">
+    Name:
+    <input type="text" name="doctor[name]">
+    Specialty:
+    <input type="text" name="doctor[specialty]">
+    <input type="submit">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+</form>
+
+<!-- When we hit submit, it will send it to the create action in the controller -->
